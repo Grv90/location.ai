@@ -34,7 +34,6 @@ button {
     z-index: 999999;
 }
 
-a-scene {
-    height: 30px;
-    width: 30px;
+a-link {
+    font-size: medium;
   }
