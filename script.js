@@ -1,18 +1,21 @@
 window.onload = () => {
+    const button = document.querySelector('button[data-action="change"]');
+    button.innerText = '﹖';
+
     let places = staticLoadPlaces();
     renderPlaces(places);
 };
 
 function staticLoadPlaces() {
-   return [
-       {
-           name: 'Pokèmon',
-           location: {
-            //    lat: -36.930460,
-            //    lng: 174.736330,
-           }
-       },
-   ];
+    return [
+        {
+            name: 'Pokèmon',
+            location: {
+                // lat: <your-latitude>,
+                // lng: <your-longitude>,
+            },
+        },
+    ];
 }
 
 var models = [
@@ -56,13 +59,13 @@ var setModel = function (model, entity) {
     div.innerText = model.info;
 };
 
-
 function renderPlaces(places) {
     let scene = document.querySelector('a-scene');
 
     places.forEach((place) => {
         let latitude = -36.930460;
         let longitude = 174.736330;
+
 
         let model = document.createElement('a-entity');
         model.setAttribute('gps-entity-place', `latitude: ${latitude}; longitude: ${longitude};`);
